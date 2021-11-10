@@ -1,16 +1,15 @@
 package com.santicodev.springindepth;
 
-import com.santicodev.springindepth.service.GreetingService;
+import com.santicodev.springindepth.config.ApplicationConfig;
 import com.santicodev.springindepth.service.OutputService;
-import com.santicodev.springindepth.service.TimeService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class SpringindepthApplication {
 
 	public static void main(String[] args) throws InterruptedException {
-
-		GreetingService greetingService = new GreetingService("Hello");
-		TimeService timeService = new TimeService(true);
-		OutputService outputService = new OutputService(greetingService, timeService);
+		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+		OutputService outputService = context.getBean(OutputService.class);
 
 		for (int i=0;i<5;i++){
 			outputService.generateOutput("Santi");

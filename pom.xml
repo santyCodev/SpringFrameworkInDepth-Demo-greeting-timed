@@ -15,9 +15,17 @@
 	<description>Spring in depth demo</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<spring.version>5.2.3.RELEASE</spring.version>
 	</properties>
 	<dependencies>
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
